@@ -1,0 +1,13 @@
+# https://docs.docker.com/registry/#tldr
+
+sudo docker run -d -p 5555:5000 --restart=always --name registry registry:2
+
+sudo docker pull nginx
+
+sudo docker tag nginx localhost:5555/fog-nginx
+
+sudo docker push localhost:5555/fog-nginx
+
+# And we got the image on a private repository.
+
+curl -X GET http://ba-woebker-bruegge.in.tum.de:30500/v2/_catalog

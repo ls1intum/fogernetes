@@ -1,0 +1,8 @@
+numpy
+click
+flask
+Flask-WTF
+flask-debugtoolbar
+flask-uploads
+requests
+schedule

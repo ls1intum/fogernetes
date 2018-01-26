@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: fodeo-fog-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fodeo-fog
+    spec:
+      containers:
+      - name: fodeo-fog
+        image: ba-woebker-bruegge.in.tum.de:30500/fodeo-fog:latest
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        fogernetes/tier: fog
+        fogernetes/performance.storage: small
+        fogernetes/performance.cpu: large
+        fogernetes/performance.memory: medium
+        fogernetes/connectivity: dsl

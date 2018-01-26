@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fodeo-fog-service
+spec:
+  selector:
+    app: fodeo-fog
+  ports:
+    - protocol: TCP
+      port: 8089
+      targetPort: 8089
+      nodePort: 30089
+      name: camera
+    - protocol: TCP
+      port: 8090
+      targetPort: 8090
+      nodePort: 30090
+      name: client
+  type: NodePort

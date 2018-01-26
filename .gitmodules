@@ -1,0 +1,9 @@
+[submodule "extensions/heapster"]
+	path = extensions/heapster
+	url = https://github.com/kubernetes/heapster
+[submodule "extensions/dashboard"]
+	path = extensions/dashboard
+	url = https://github.com/kubernetes/dashboard
+[submodule "extensions/hypriot-image-builder-rpi"]
+	path = extensions/hypriot-image-builder-rpi
+	url = https://github.com/hypriot/image-builder-rpi

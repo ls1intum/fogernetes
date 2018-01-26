@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: fodeo-central-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fodeo-central
+    spec:
+      containers:
+      - name: fodeo-central
+        image: ba-woebker-bruegge.in.tum.de:30500/fodeo-central:latest
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        fogernetes/tier: cloud
+        fogernetes/performance.storage: large
+        fogernetes/performance.cpu: medium
+        fogernetes/performance.memory: medium
+        fogernetes/connectivity: dsl

@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: registry-service
+spec:
+  selector:
+    app: registry
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30500
+      name: registry
+  type: NodePort

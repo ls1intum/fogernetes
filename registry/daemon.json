@@ -1,0 +1,5 @@
+{
+  "insecure-registries" : [
+    "ba-woebker-bruegge.in.tum.de:30500"
+  ]
+}

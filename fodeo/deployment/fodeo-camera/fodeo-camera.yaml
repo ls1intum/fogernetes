@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: fodeo-camera-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fodeo-camera
+    spec:
+      containers:
+      - name: fodeo-camera
+        image: ba-woebker-bruegge.in.tum.de:30500/fodeo-camera:latest
+        imagePullPolicy: IfNotPresent
+      nodeSelector:
+        fogernetes/tier: edge
+        fogernetes/extension.media.camera: "true"
+        fogernetes/performance.storage: small
+        fogernetes/performance.cpu: small
+        fogernetes/performance.memory: small
+        fogernetes/connectivity: wifi

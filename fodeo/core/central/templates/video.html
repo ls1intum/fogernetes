@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <div><h3><a href="{{ url_for('video_feed') }}">Go back</a></h3></div>
+    <div>
+        <br />
+        <!--<iframe src="{{ filesrc }}" width="800px" height="600px" ></iframe>-->
+        <video width="960" height="720" controls>
+          <source src="{{ filesrc }}">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+{% endblock %}

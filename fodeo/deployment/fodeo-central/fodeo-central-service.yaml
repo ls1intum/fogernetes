@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fodeo-central-service
+spec:
+  selector:
+    app: fodeo-central
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30080
+      name: camera
+  type: NodePort

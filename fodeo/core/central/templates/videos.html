@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if videos | length == 0 %}
+    <p>No videos found.</p>
+    {% else %}
+    <ul>
+    {% for video_name in videos %}
+        {% if video_name.endswith("mp4") %}
+    	    <li>{{ video_name }} - <a href="{{ url_for('video_show', video_name=video_name) }}">Show video.</a></li>
+        {% else %}
+            <li>{{ video_name }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}
